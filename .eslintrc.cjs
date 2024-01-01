@@ -14,6 +14,17 @@ const config = {
     "plugin:@typescript-eslint/all",
     "prettier",
   ],
+  overrides: [
+    {
+      // For test code
+      extends: ["plugin:vitest/all"],
+      files: ["*.test.ts"],
+      rules: {
+        "vitest/max-expects": 0,
+        "vitest/require-hook": 0,
+      },
+    },
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
