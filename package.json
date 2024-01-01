@@ -5,6 +5,9 @@
   "packageManager": "pnpm@8.13.1",
   "preinstall": "npx only-allow pnpm",
   "scripts": {
+    "build:clean": "rm -rf ./dist",
+    "build:compile": "tsc --project tsconfig.build.json",
+    "build": "run-s build:clean build:compile",
     "eslint-print-config": "eslint -c .eslintrc.cjs --print-config src/index.ts > temp/eslint-print-config.json",
     "lint-dry:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings=0 .",
     "lint-dry:format": "prettier --cache --check .",
