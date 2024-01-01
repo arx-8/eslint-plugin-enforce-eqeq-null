@@ -5,10 +5,30 @@
   "packageManager": "pnpm@8.13.1",
   "preinstall": "npx only-allow pnpm",
   "scripts": {
+    "eslint-print-config": "eslint -c .eslintrc.cjs --print-config src/index.ts > temp/eslint-print-config.json",
+    "lint-dry:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings=0 .",
+    "lint-dry:format": "prettier --cache --check .",
+    "lint-dry:tsc": "tsc --noEmit",
+    "lint-dry": "run-s --continue-on-error 'lint-dry:*'",
+    "lint:eslint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --max-warnings=0 --fix .",
+    "lint:format": "prettier --cache --log-level warn --write .",
+    "lint": "run-s --continue-on-error 'lint:*' lint-dry:tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@tsconfig/strictest": "2.0.2",
+    "@types/eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "@typescript-eslint/parser": "6.16.0",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-sort-destructure-keys": "1.5.0",
+    "eslint-plugin-sort-keys-fix": "1.1.2",
+    "eslint-plugin-typescript-sort-keys": "3.1.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.1.1",
+    "prettier-plugin-organize-imports": "3.2.4",
     "typescript": "5.3.3"
   }
 }
