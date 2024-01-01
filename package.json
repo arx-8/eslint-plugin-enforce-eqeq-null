@@ -2,6 +2,19 @@
   "name": "eslint-plugin-enforce-eqeq-null",
   "version": "0.0.1",
   "license": "MIT",
+  "description": "Enforce the use of `== null` and `!= null`.",
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arx-8/eslint-plugin-enforce-eqeq-null.git"
+  },
+  "main": "dist/index.js",
   "packageManager": "pnpm@8.13.1",
   "preinstall": "npx only-allow pnpm",
   "scripts": {
